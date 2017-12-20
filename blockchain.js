@@ -1,8 +1,8 @@
 const sha256 = require('js-sha256').sha256;
 
-const blockchain = (function(){
+const blockchain = (function () {
   const blocks = [];
-  
+
   const initBlockchain = () => {
     const data = 'Hello world!';
     const timestamp = new Date();
@@ -17,9 +17,9 @@ const blockchain = (function(){
     while (!isHashValid(hash)) {
       let input = `${data}${timestamp}${prevHash}${index}${nonce}`;
       hash = sha256(input);
-      nonce =+ 1;
+      nonce = + 1;
     }
-    console.log(nonce);
+    console.log('nonce: ', nonce);
     blocks.push(hash);
   };
 
