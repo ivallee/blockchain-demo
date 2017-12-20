@@ -45,5 +45,4 @@ const blockchain = (function () {
 
 })();
 
-
 module.exports = blockchain;
